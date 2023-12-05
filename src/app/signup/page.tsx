@@ -1,37 +1,65 @@
 "use client"; //to use client components like useState
 
+import axios from "axios";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 export default function SignupPage(){
+    const router = useRouter();
+
     //user data to be accumalted
     const [user, setUser] = React.useState({
-        name: "",
+        username: "",
         email: "",
         password: "",
     });
     
-    //login method
-    const onSignup = async () => {
+    const [buttonDisabled, setButtonDisabled] = useState(false);
+    const [loading, setLoading] = React.useState(false);
 
+    //signup method logic
+    const onSignup = async () => {
+        try{
+            setLoading(true);
+            const response = await axios.post("/api/users/signup", user);
+            console.log("Signup Success", response.data);
+            //push user to login page after signup
+            router.push("/login");
+        } catch(error: any){
+            console.log("Signup Failed!");
+            toast.error(error.message);
+        } finally{
+            setLoading(false);
+        }
     }
 
-
+    //use effect in this page
+    useEffect(() => {
+        if(user.username.length > 0 && user.email.length > 0 && user.password.length > 0){
+            setButtonDisabled(false);
+        } else{
+            setButtonDisabled(true);
+        }
+    })
     return(
         <>
-        <div>
-            <h1>Signup Page</h1>
+        <div className="flex flex-col items-center justify-center min-h-screen py-2">
+            <h1 className="text-center text-4xl pb-3">{loading ? "Processing" : "Signup"}</h1>
             <label htmlFor="name">Name</label>
             <input 
+                className="p-3 m-1 border border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"
                 type="text"
-                id="name"
-                value={user.name}
-                onChange={(e) => setUser({...user, name: e.target.value})}
+                id="username"
+                value={user.username}
+                onChange={(e) => setUser({...user, username: e.target.value})}
                 placeholder="Enter Your Name"
                 />
             <br />
             <label htmlFor="email">Email</label>
             <input 
+                className="p-3 border m-1 border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"
                 type="email"
                 id="email"
                 value={user.email}
@@ -41,6 +69,7 @@ export default function SignupPage(){
             <br />
             <label htmlFor="password">Password</label>
             <input 
+                className="p-3 m-1 border border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"
                 type="password"
                 id="password"
                 value={user.password}
@@ -48,7 +77,10 @@ export default function SignupPage(){
                 placeholder="Enter Your Password"
                 />
             <br />
-            <button onClick={onSignup}>Signup</button>
+            
+            <button 
+                className="p-3 border border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"
+                onClick={onSignup}>{buttonDisabled ? "Cannot SignUp" : "SignUp"}</button>
             <br />
             <Link href="/login">Go to Login Page</Link>
         </div>

@@ -3,9 +3,9 @@ import Link from "next/link";
 export default function ProfilePage(){
     return(
         <div>
-            <h1 className="text-4xl">Profile Page</h1>
-            <p>This is your profile page here</p>
-            <span>Hello</span>
+            <h1 className="text-center">Profile Page</h1>
+            <p className="text-center">This is your profile page here</p>
+            <span className="text-center">Hello</span>
         </div>
     )
 }

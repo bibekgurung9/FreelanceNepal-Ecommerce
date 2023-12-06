@@ -4,7 +4,7 @@ export default function UserProfile({params}: any){
         <div>
             <h1 className="text-4xl">Profile Page</h1>
             <p>This is your profile page here</p>
-            <span>Hello {params.id.toUpperCase()}</span>
+            <span>{params.id}</span>
         </div>
     )
 }

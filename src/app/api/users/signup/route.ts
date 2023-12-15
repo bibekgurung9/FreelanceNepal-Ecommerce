@@ -10,7 +10,7 @@ export async function POST(request: NextRequest){
 
     try{
         const reqBody = await request.json();
-        const {username, email, password} = reqBody;
+        const {username, email, userType, password} = reqBody;
         console.log(reqBody);
 
         //check if the user already exists in the database
@@ -28,6 +28,7 @@ export async function POST(request: NextRequest){
         const newUser = new User({
             username,
             email,
+            userType,
             password: hashedPassword,
         });
 

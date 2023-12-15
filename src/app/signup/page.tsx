@@ -13,6 +13,7 @@ export default function SignupPage(){
     const [user, setUser] = React.useState({
         username: "",
         email: "",
+        userType: "",
         password: "",
     });
     
@@ -46,7 +47,7 @@ export default function SignupPage(){
     return(
         <>
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
-            <h1 className="text-center text-4xl pb-3">{loading ? "Processing" : "Signup"}</h1>
+            <h1 className="text-center text-4xl pb-3">{loading ? "Processing" : "SignUp Page"}</h1>
             <label htmlFor="name">Name</label>
             <input 
                 className="p-3 m-1 border border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"
@@ -67,6 +68,33 @@ export default function SignupPage(){
                 placeholder="Enter Your Email"
                 />
             <br />
+            <div className=" text-center flex-column">
+                <div className="border rounded p-3 ">
+                    <label className="text-sm text-gray-500"><span className="text-red-500">Warning:</span> You can only work use services as selected. <br />You need to create a separate account if you want to switch roles.</label><br />
+                </div>
+
+            <label htmlFor="">How will you use our platform?</label><br />
+            
+            <label htmlFor="freelancer">            
+                <input 
+                    type="radio"
+                    value="freelancer" //set unique value
+                    checked={user.userType === 'freelancer'} //check userType freelancer
+                    onChange={(e) => setUser({...user, userType: 'freelancer'})}
+                    className="p-3 border m-1 border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"
+                    ></input>Freelancer</label>
+            <br />
+            <label htmlFor="client">            
+                <input 
+                    type="radio"
+                    value="client"
+                    checked={user.userType === 'client'}
+                    onChange={(e) => setUser({...user, userType:'client'})}
+                    className="p-3 border m-1 border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"
+                    ></input>Client</label>
+            <br />
+            </div>
+            
             <label htmlFor="password">Password</label>
             <input 
                 className="p-3 m-1 border border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"
@@ -77,7 +105,6 @@ export default function SignupPage(){
                 placeholder="Enter Your Password"
                 />
             <br />
-            
             <button 
                 className="p-3 border border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"
                 onClick={onSignup}>{buttonDisabled ? "Cannot SignUp" : "SignUp"}</button>

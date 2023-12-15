@@ -35,7 +35,6 @@ export default function LoginPage(){
         }
     }
 
-    //use effect
         //use effect in this page
         useEffect(() => {
             if(user.email.length > 0 && user.password.length > 0){

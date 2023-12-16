@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
+import NavBar from "@/components/NavBar/NavBar";
 
 
 export default function LoginPage(){
@@ -46,6 +47,7 @@ export default function LoginPage(){
 
     return(
         <>
+        <NavBar />
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
             <h1 className="text-center text-5xl mb-2">{loading ? "Processing" : "Login Page"}</h1>
             <label htmlFor="email">Email</label>

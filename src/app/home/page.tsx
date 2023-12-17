@@ -1,20 +1,21 @@
-import { Footer, Services } from "../sections";
+import Hero from "@/components/Hero/Hero";
+import NavBar from "@/components/NavBar/NavBar";
 
 export default function HomePage() {
     return (
         <main className="realtive">
 
         <section className="xl:padding-1 wide:padding-r padding-b">
-        Nav Bar
+        <NavBar />
         </section>
-        <section className="padding">
-        hero
+        <section className="xl:padding-1 wide:padding-r padding-b">
+        <Hero />
         </section>
         <section className="padding">
             Trusted By
         </section>
         <section className="padding-x py-10">
-        <Services />
+        Services
         </section>
         <section className="bg-pale-blue-padding">
     
@@ -28,7 +29,7 @@ export default function HomePage() {
         </section>
 
         <section className="bg-black-padding-x padding-t pb-8">
-        <Footer />
+        Footer
         </section>
       </main>
     )

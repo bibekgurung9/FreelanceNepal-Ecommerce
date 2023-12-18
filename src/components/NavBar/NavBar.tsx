@@ -1,9 +1,11 @@
 import React from 'react';
 import { navLinks } from '@/constants';
+import Image from 'next/image';
+import  hamburger  from '@/assets/images/hamburger.png'
 
 const NavBar = () => {
   return (
-    <header className='padding-x absolute z-10 w-full '>
+    <header className='padding-x fixed z-10 w-full \'>
       <nav className='flex justify-between items-center max-container  p-2'>
         {/*Change the image later and remove this text here */}
         <a href="/" className='bg-blue-500 text-slate-50 px-2 font-bold font-mono text-2xl'>
@@ -23,16 +25,14 @@ const NavBar = () => {
             </li>
           })}
         </ul>
-        <div className='hiddden:max-lg:block fonts-monerrat leading-normal text-lg text-slate-gray p-3 bg-blue-500  text-slate-50 font-bold font-mono'>
-          {/*<img 
-            src=""
+        <div className='hiddden:max-lg:block fonts-monerrat leading-normal text-lg text-slate-gray p-3  text-slate-50 font-bold font-mono'>
+          <Image
+            className='' 
+            src={hamburger}
             alt=""
             width={25}
             height={25}
            />
-           And add button functions
-           */}
-           Hamburger
         </div>
       </nav>
     </header>

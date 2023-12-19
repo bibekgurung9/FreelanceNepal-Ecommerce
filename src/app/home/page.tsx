@@ -1,5 +1,6 @@
-import Hero from "@/components/Hero/Hero";
+import Hero from "@/sections/Hero";
 import NavBar from "@/components/NavBar/NavBar";
+import TrustedBy from "@/sections/TrustedBy";
 
 export default function HomePage() {
     return (
@@ -12,7 +13,7 @@ export default function HomePage() {
         <Hero />
         </section>
         <section className="padding">
-            Trusted By
+        <TrustedBy />
         </section>
         <section className="padding-x py-10">
         Services

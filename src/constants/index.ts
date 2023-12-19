@@ -14,3 +14,4 @@ export const statistics = [
     { value: '1k+', label: 'Companines Happy'},
     { value: '100k+', label: 'Customers'},
 ];
+

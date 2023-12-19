@@ -1,22 +1,23 @@
 import Hero from "@/sections/Hero";
 import NavBar from "@/components/NavBar/NavBar";
 import TrustedBy from "@/sections/TrustedBy";
+import Services from "@/sections/Services";
 
 export default function HomePage() {
     return (
         <main className="realtive">
 
         <section className="xl:padding-1 wide:padding-r padding-b">
-        <NavBar />
+            <NavBar />
         </section>
         <section className="xl:padding-1 wide:padding-r padding-b">
-        <Hero />
+            <Hero />
         </section>
         <section className="padding">
-        <TrustedBy />
+            <TrustedBy />
         </section>
         <section className="padding-x py-10">
-        Services
+            <Services />
         </section>
         <section className="bg-pale-blue-padding">
     

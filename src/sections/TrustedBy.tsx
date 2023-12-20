@@ -19,17 +19,22 @@ const TrustedBy = () => {
   return (
     <>
     <main>
-        <div className='flex items-start justify-center mt-4'>
-          <h1 className='mb-4'>We Are Trusted By: </h1>
-            {images.map((image, index) => (
-              <Image 
-                  key={index} 
-                  src={image.src} 
-                  alt={image.alt}
-                  width={50}
-                  height={50}
-                  className='' />
-            ))}
+        <div className='flex justify-center mt-4 items-center'>
+          <h1 className='mb-4'>Trusted By: </h1>
+            <div className='flex gap-16'>            
+              {images.map((image, index) => (
+                <div className='border'>
+                <Image 
+                    key={index} 
+                    src={image.src} 
+                    alt={image.alt}
+                    width={100}
+                    height={100}
+                    className='' />
+                </div>
+              ))}
+            </div>
+
         </div>
     </main>
     </>

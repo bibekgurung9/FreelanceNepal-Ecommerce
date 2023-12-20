@@ -19,14 +19,18 @@ const Hero = () => {
 
             <h1 className='bg-transparent text-white text-3xl font-bold'>Work Should Be Done</h1>
             <p className='bg-transparent text-white text-2xl font-bold'>Find a Client. Find a Freelancer. Find The Best. Do Your Best.</p>
-            <Buttons 
-                label="I am a Freelancer" 
-                iconUrl=""
-                />
-            <Buttons 
-                label="I am a Client" 
-                iconUrl=""
-                />
+              
+              <div className='flex gap-16 mt-6 bg-transparent'>
+              <Buttons 
+                  label="I am a Freelancer" 
+                  iconUrl=""
+                  />
+              <Buttons 
+                  label="I am a Client" 
+                  iconUrl=""
+                  />
+              </div>
+
                 <div className='flex justify-start items-start flex-wrap w-full mt-20 gap-16 bg-transparent'>
                 {statistics.map((stat) => (
                   <div key={stat.label} className='bg-transparent'>

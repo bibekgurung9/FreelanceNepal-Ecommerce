@@ -15,7 +15,7 @@ const NavBar = () => {
   }
 
   return (
-    <header className='py-1 fixed z-10 w-full'>
+    <header className='py-1 fixed z-10 w-full bg-white border-b'>
       <nav className='flex justify-between items-center max-container p-2 '>
         <a href="/" className='text-black px-2 font-bold font-mono text-2xl'>
           Freelance Nepal

@@ -26,7 +26,7 @@ const NavBar = () => {
             return <li key={item.label}>
               <a 
                 href={item.href} 
-                className="fonts-monerrat leading-normal text-lg text-slate-gray p-3  text-black font-bold">{item.label}</a>
+                className="fonts-monerrat leading-normal text-lg p-3 text-black font-bold">{item.label}</a>
             </li>
           })}
         </ul>
@@ -49,7 +49,7 @@ const NavBar = () => {
             return <li key={item.label} className='mb-2'>
               <a 
                 href={item.href} 
-                className="fonts-monerrat leading-normal text-lg text-slate-gray p-2 text-black font-bold hover:bg-blue-200 hover:rounded-full">{item.label}</a>
+                className="fonts-monerrat leading-normal text-lg p-2 text-black font-bold hover:bg-blue-200 hover:rounded-full">{item.label}</a>
             </li>
           })}
           </ul>

@@ -4,7 +4,7 @@ import { images } from '@/constants'
 
 const Services = () => {
     return (
-    <div className='w-full flex xl:flex-row flex-col justify-center  border-2 gap-10 max-container'>
+    <div className='w-full flex xl:flex-row flex-col justify-center gap-10 max-container'>
         <h1 className='text-4xl font-bold text-center text-blue-500'>Services Commonly Searched For</h1> 
         <br />
 

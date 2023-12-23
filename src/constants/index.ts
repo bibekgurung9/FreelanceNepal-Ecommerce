@@ -12,6 +12,5 @@ export const statistics = [
     { value: '10k+', label: 'Clients Satisfied'},
     { value: '10k+', label: 'Freelancers Worked'},
     { value: '1k+', label: 'Companines Happy'},
-    { value: '100k+', label: 'Customers'},
 ];
 

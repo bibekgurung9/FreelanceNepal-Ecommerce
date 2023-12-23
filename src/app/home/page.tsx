@@ -3,32 +3,31 @@ import Hero from "@/sections/Hero";
 import NavBar from "@/components/NavBar";
 import TrustedBy from "@/sections/TrustedBy";
 import Services from "@/sections/Services";
+import ForClients from "@/sections/ForClients";
 
 export default function HomePage() {
     return (
         <main className="relative">
-
             <section className="">
-            <NavBar />
+                <NavBar />
             </section>
-            <section className="xl:padding-1 wide:padding-r padding-b">
-            <Hero />
+            <section className="xl:padding-1 wide:padding-r padding-b padding">
+                <Hero />
             </section>
-            <section className="padding py-12">
-            <TrustedBy />
+            <section className="padding py-4">
+                <TrustedBy />
             </section>
             <section className="padding-x py-10">
-            <Services />
+            <   Services />
             </section>
             <section className="bg-pale-blue-padding">
                 //
             </section>
             <section className="padding-x sm:py-32 py-16 w-full">
-                For Clients
+                <ForClients/>
             </section>
-
             <section className="padding-x sm:py-32 py-16 w-full">
-            For Freelancers
+                For Freelancers
             </section>
 
             <section className="padding bg-gray-300">

@@ -1,39 +1,24 @@
 import React from 'react'
-import copywriting from '@/assets/icons/Services/copywriting.svg'
-import coding from '@/assets/icons/Services/coding.svg'
-import accountant from '@/assets/icons/Services/accountant.svg'
-import graphicdesign from '@/assets/icons/Services/graphicdesign.svg'
-import socialmedia from '@/assets/icons/Services/socialmedia.svg'
-import photographer from '@/assets/icons/Services/photographer.svg'
 import Image from 'next/image'
+import { images } from '@/constants'
 
 const Services = () => {
-
-    const images = [
-        { src: copywriting, alt: 'Copy Writer' },
-        { src: coding, alt: 'coding' },
-        { src: accountant, alt: 'Accountant' },
-        { src: graphicdesign, alt: 'graphicdesign' },
-        { src: socialmedia, alt: 'socialmedia' },
-        { src: photographer, alt: 'photographer' },
-    ]
-
     return (
-    <div className='items-center justify-center'>
-        <h1>Common Services Used On Our Platform:</h1> 
+    <div className='w-full flex xl:flex-row flex-col justify-center  border-2 gap-10 max-container'>
+        <h1 className='text-4xl font-bold text-center text-blue-500'>Services Commonly Searched For</h1> 
         <br />
-        <div className='flex justify-start'>
-        {images.map((image, index) => (
-                    <Image 
-                        key={index}
-                        src={image.src} 
-                        alt={image.alt}
-                        width={50}
-                        height={50}
-                        style={{ margin: '0 10px' }} />
-                ))}
-        </div>
 
+        <div className='relative flex justify-center items-start w-full'>
+            {images.map((image, index) => (
+                <div key={index} className='flex flex-col justify-center items-center border lg:m-4'>
+    <a href={image.link} className=''>
+        <Image src={image.src} alt={image.alt} height={150} width={150}/>
+        <span className='mt-1 font-bold'>{image.alt}</span>
+    </a>
+</div>
+
+            ))}
+        </div>
     </div>
   )
 }

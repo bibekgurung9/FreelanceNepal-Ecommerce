@@ -11,11 +11,8 @@ export default function HomePage() {
             <section className="">
                 <NavBar />
             </section>
-            <section className="xl:padding-1 wide:padding-r padding-b padding">
+            <section className="padding-x">
                 <Hero />
-            </section>
-            <section className="padding py-4">
-                <TrustedBy />
             </section>
             <section className="padding-x py-10">
             <   Services />

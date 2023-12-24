@@ -30,3 +30,24 @@ export const images = [
     { src: socialmedia, alt: 'Social Media Manager', link: '/#' },
     { src: photographer, alt: 'Photographer', link: '/#' },
 ];
+
+//reviews card 
+import profile from '@/assets/profile.svg'
+export const reviews = [
+    { src: profile, description: `
+     Real-time project tracking ensures accountability, while a community-driven feedback system promotes professionalism. It's a reliable hub for seamless collaboration, empowering freelancers and satisfying clients.`, name: 'User 1', rating: 5},
+    { src: profile, description: `
+    Real-time project tracking ensures accountability, while a community-driven feedback system promotes professionalism. It's a reliable hub for seamless collaboration, empowering freelancers and satisfying clients.`, name: 'User 2', rating: 5},
+    { src: profile, description: `
+    Real-time project tracking ensures accountability, while a community-driven feedback system promotes professionalism. It's a reliable hub for seamless collaboration, empowering freelancers and satisfying clients.`, name: 'User 3', rating: 4},
+    /*
+    { src: profile, description: `
+    Real-time project tracking ensures accountability, while a community-driven feedback system promotes professionalism. It's a reliable hub for seamless collaboration, empowering freelancers and satisfying clients.`, name: 'User 4'},
+    { src: profile, description: `
+    Real-time project tracking ensures accountability, while a community-driven feedback system promotes professionalism. It's a reliable hub for seamless collaboration, empowering freelancers and satisfying clients.`, name: 'User 5'},
+    { src: profile, description: `
+    Real-time project tracking ensures accountability, while a community-driven feedback system promotes professionalism. It's a reliable hub for seamless collaboration, empowering freelancers and satisfying clients.`, name: 'User 6'},
+    { src: profile, description: `
+    Real-time project tracking ensures accountability, while a community-driven feedback system promotes professionalism. It's a reliable hub for seamless collaboration, empowering freelancers and satisfying clients.`, name: 'User 7'}, 
+    */
+]

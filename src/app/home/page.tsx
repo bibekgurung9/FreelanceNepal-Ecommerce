@@ -4,6 +4,7 @@ import NavBar from "@/components/NavBar";
 import Services from "@/sections/Services";
 import ForClients from "@/sections/ForClients";
 import ForFreelancers from "@/sections/ForFreelancers";
+import CustomerReviews from "@/sections/CustomerReviews";
 
 export default function HomePage() {
     return (
@@ -25,7 +26,7 @@ export default function HomePage() {
             </section>
 
             <section className="padding bg-gray-300">
-                Customer Reviews
+                <CustomerReviews />
             </section>
 
             <section className="padding padding-x sm:py-32 py-16 w-full bg-gray-400">

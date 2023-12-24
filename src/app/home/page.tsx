@@ -5,6 +5,7 @@ import Services from "@/sections/Services";
 import ForClients from "@/sections/ForClients";
 import ForFreelancers from "@/sections/ForFreelancers";
 import CustomerReviews from "@/sections/CustomerReviews";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
     return (
@@ -28,13 +29,9 @@ export default function HomePage() {
             <section className="padding bg-gray-300">
                 <CustomerReviews />
             </section>
-
-            <section className="padding padding-x sm:py-32 py-16 w-full bg-gray-400">
-                Subscribe to our Newsletter
-            </section>
-
-            <section className="bg-black-padding-x padding-t pb-8">
-            Footer
+            
+            <section className="pb-8 pt-2">
+                <Footer />
             </section>
       </main>
     )

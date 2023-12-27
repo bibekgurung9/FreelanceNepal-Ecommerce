@@ -1,6 +1,4 @@
 "use client"; //to use client components like useState
-import axios from "axios";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -17,6 +15,11 @@ export default function UserTypeSelection(){
     //signup method logic and push to signup page
     const onSignup = async () => {
         try{
+            if (!user.userType) {
+                // If user type is not selected, show an error message
+                toast.error("Please select a user type before proceeding.");
+                return;
+            }
             setLoading(true);
             const queryType = `userType=${encodeURIComponent((user.userType))}`;
             router.push(`/signup?${queryType}`);

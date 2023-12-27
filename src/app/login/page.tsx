@@ -75,7 +75,7 @@ export default function LoginPage(){
                 className="p-3 border border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800 hover:bg-slate-300 " 
                 onClick={onLogin}>{buttonDisabled ? "Cannot Login" : "Login"}</button>
             <br />
-            <Link href="/signup" className="text-xl font-bold">Go to <span className="underline hover:text-red-500">Signup Page</span></Link>
+            <Link href="/userTypeSelection" className="text-xl font-bold">Go to <span className="underline hover:text-red-500">Signup Page</span></Link>
         </div>
         </>
     )

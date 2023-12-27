@@ -1,20 +1,22 @@
-"use client"; //to use client components like useState
+"use client"; 
 import SimpleNav from "@/components/SimpleNav";
-//cmt
 import axios from "axios";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 export default function SignupPage(){
     const router = useRouter();
-
+    //extract the user type from the query
+    const query = useSearchParams();
+    const userSelected = query.get('userType');
+    
     //user data to be accumalted
     const [user, setUser] = React.useState({
         username: "",
         email: "",
-        userType: "",
+        userType: userSelected,
         password: "",
     });
     
@@ -27,8 +29,7 @@ export default function SignupPage(){
             setLoading(true);
             const response = await axios.post("/api/users/signup", user);
             console.log("Signup Success", response.data);
-            //push user to login page after signup
-            router.push("/login");
+            router.push("/signup");
         } catch(error: any){
             console.log("Signup Failed!");
             toast.error(error.message);
@@ -69,34 +70,7 @@ export default function SignupPage(){
                 onChange={(e) => setUser({...user, email: e.target.value})}
                 placeholder="Enter Your Email"
                 />
-            <br />
-            <div className=" text-center flex-column">
-                <div className="border rounded p-3 ">
-                    <label className="text-sm text-gray-500"><span className="text-red-500">Warning:</span> You can only work use services as selected. <br />You need to create a separate account if you want to switch roles.</label><br />
-                </div>
-
-            <label htmlFor="">How will you use our platform?</label><br />
-            
-            <label htmlFor="freelancer">            
-                <input 
-                    type="radio"
-                    value="freelancer" //set unique value
-                    checked={user.userType === 'freelancer'} //check userType freelancer
-                    onChange={(e) => setUser({...user, userType: 'freelancer'})}
-                    className="p-3 border m-1 border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"
-                    ></input>Freelancer</label>
-            <br />
-            <label htmlFor="client">            
-                <input 
-                    type="radio"
-                    value="client"
-                    checked={user.userType === 'client'}
-                    onChange={(e) => setUser({...user, userType:'client'})}
-                    className="p-3 border m-1 border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"
-                    ></input>Client</label>
-            <br />
-            </div>
-            
+            <br />            
             <label htmlFor="password" className="text-xl font-bold">Password</label>
             <input 
                 className="p-3 m-1 border border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"

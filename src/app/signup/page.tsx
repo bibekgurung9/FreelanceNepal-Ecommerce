@@ -1,4 +1,5 @@
 "use client"; //to use client components like useState
+import SimpleNav from "@/components/SimpleNav";
 //cmt
 import axios from "axios";
 import Link from "next/link";
@@ -46,9 +47,10 @@ export default function SignupPage(){
     })
     return(
         <>
+        <SimpleNav />
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
-            <h1 className="text-center text-4xl pb-3">{loading ? "Processing" : "SignUp Page"}</h1>
-            <label htmlFor="name">Name</label>
+            <h1 className="text-4xl font-bold mb-1">{loading ? "Processing" : "SignUp Page"}</h1>
+            <label htmlFor="name" className="text-xl font-bold">Name</label>
             <input 
                 className="p-3 m-1 border border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"
                 type="text"
@@ -58,7 +60,7 @@ export default function SignupPage(){
                 placeholder="Enter Your Name"
                 />
             <br />
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email" className="text-xl font-bold">Email</label>
             <input 
                 className="p-3 border m-1 border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"
                 type="email"
@@ -95,7 +97,7 @@ export default function SignupPage(){
             <br />
             </div>
             
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password" className="text-xl font-bold">Password</label>
             <input 
                 className="p-3 m-1 border border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"
                 type="password"

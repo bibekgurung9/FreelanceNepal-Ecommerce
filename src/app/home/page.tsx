@@ -30,7 +30,7 @@ export default function HomePage() {
                 <CustomerReviews />
             </section>
             
-            <section className="pb-8 pt-2">
+            <section className="pt-2">
                 <Footer />
             </section>
       </main>

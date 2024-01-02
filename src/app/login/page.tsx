@@ -5,6 +5,8 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
+import NavBar from "@/components/NavBar";
+import SimpleNav from "@/components/SimpleNav";
 
 
 export default function LoginPage(){
@@ -46,9 +48,10 @@ export default function LoginPage(){
 
     return(
         <>
+        <SimpleNav />
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
-            <h1 className="text-center text-5xl mb-2">{loading ? "Processing" : "Login Page"}</h1>
-            <label htmlFor="email">Email</label>
+            <h1 className="text-4xl font-bold mb-1">{loading ? "Processing" : "Login Page"}</h1>
+            <label htmlFor="email" className="text-xl font-bold">Email</label>
             <input 
                 className="p-3 mt-1 border border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"
                 type="email"
@@ -58,7 +61,7 @@ export default function LoginPage(){
                 placeholder="Enter Your Email"
                 />
             <br />
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password" className="text-xl font-bold">Password</label>
             <input 
                 className="p-3 mt-1 border border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800"
                 type="password"
@@ -69,10 +72,10 @@ export default function LoginPage(){
                 />
             <br />
             <button
-                className="p-3 border border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800" 
+                className="p-3 border border-gray-400 rounded-lg mb-4 focusLoutline-none focus:border-gray-800 hover:bg-slate-300 " 
                 onClick={onLogin}>{buttonDisabled ? "Cannot Login" : "Login"}</button>
             <br />
-            <Link href="/signup">Go to Signup Page</Link>
+            <Link href="/userTypeSelection" className="text-xl font-bold">Go to <span className="underline hover:text-red-500">Signup Page</span></Link>
         </div>
         </>
     )

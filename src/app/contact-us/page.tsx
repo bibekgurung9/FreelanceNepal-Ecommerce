@@ -4,12 +4,6 @@ import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 
 export default function AboutUs() {
-
-  //email sent by user
-  const [email, setEmail] = React.useState({
-    email: "",
-    message: "",
-  });
 return (
     <main className='relative'>
         <section className='pb-8'>

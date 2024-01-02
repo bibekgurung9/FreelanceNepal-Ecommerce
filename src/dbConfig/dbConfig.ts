@@ -1,8 +1,7 @@
-import mongoose from "mongoose";
+import mongoose, { connection } from "mongoose";
 
 export default async function connect(){
     try{
-        //connection setup
         mongoose.connect(process.env.MONGO_URL!);
         const connection = mongoose.connection;
 

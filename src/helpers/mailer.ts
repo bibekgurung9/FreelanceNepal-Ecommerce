@@ -3,11 +3,8 @@ import User from "@/models/userModels"
 import bcryptjs from "bcryptjs"
 
 export const sendEmail = async ( {email, emailType, userId} : any) => {
-
     try{
-        //creating a hashed token
         const hashedToken = await bcryptjs.hash(userId.toString(), 10);
-
         //verify email to use services
         if(emailType === "VERIFY"){
             await User.findByIdAndUpdate(userId, 
@@ -42,6 +39,8 @@ export const sendEmail = async ( {email, emailType, userId} : any) => {
                     ${process.env.DOMAIN}/verifyemail?token=${hashedToken}
                     </p>`
           }
+          const mailResponse = await transport.sendMail(mailOptions);
+          return mailResponse;
     }
     catch(error:any){
         throw new Error(error.message);

@@ -1,6 +1,6 @@
 "use client"; //to use client components like useState
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import toast from "react-hot-toast";
 import SimpleNav from "@/components/SimpleNav";
 

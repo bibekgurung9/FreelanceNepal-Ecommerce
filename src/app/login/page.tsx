@@ -1,11 +1,9 @@
 "use client"; //to use client components like useState
-
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
-import NavBar from "@/components/NavBar";
 import SimpleNav from "@/components/SimpleNav";
 
 
@@ -15,18 +13,19 @@ export default function LoginPage(){
     const [user, setUser] = React.useState({
         email: "",
         password: "",
-    });
-    
+    }); 
     const [buttonDisabled, setButtonDisabled] = useState(false);
     const [loading, setLoading] = React.useState(false);
-
+    
     //login method
     const onLogin = async () => {
         try{
             setLoading(true);
             const response = await axios.post("/api/users/login", user);
             console.log("Login Successful", response);
-            //push user to login page after signup
+
+            const userType = response.data.userType;
+            //push user to profile page after login
             toast.success("Login Successful")
             router.push("/profile");
         } catch(error: any){

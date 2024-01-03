@@ -29,6 +29,7 @@ export const images = [
     { src: graphicdesign, alt: 'Graphic Designers', link: '/#' },
     { src: socialmedia, alt: 'Social Media Manager', link: '/#' },
     { src: photographer, alt: 'Photographer', link: '/#' },
+    
 ];
 
 //reviews card 

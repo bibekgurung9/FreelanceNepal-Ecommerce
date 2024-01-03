@@ -13,23 +13,21 @@ export default function HomePage() {
             <section className="">
                 <NavBar />
             </section>
-            <section className="padding-x bg-blue-500">
+            <section className="padding-x bg-slate-400">
                 <Hero />
             </section>
-            <section className="padding-x py-10">
+            <section className="padding-x py-10 bg-slate-300">
             <   Services />
             </section>
-            <section className="padding-x sm:py-1 py-16 w-full bg-blue-500">
+            <section className="padding-x w-full">
                 <ForClients/>
             </section>
-            <section className="padding-x sm:py-1 py-16 w-full bg-white">
+            <section className="padding-x w-full bg-slate-300">
                 <ForFreelancers />
             </section>
-
-            <section className="padding bg-gray-300">
+            <section className="padding">
                 <CustomerReviews />
             </section>
-            
             <section className="pt-2">
                 <Footer />
             </section>

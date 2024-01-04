@@ -24,10 +24,14 @@ export default function LoginPage(){
             const response = await axios.post("/api/users/login", user);
             console.log("Login Successful", response);
 
-            const userType = response.data.userType;
             //push user to profile page after login
-            toast.success("Login Successful")
-            router.push("/profile");
+            const userType = response.data.userType;
+            if(userType === "client"){
+                router.push('/profile/client-profile')
+            } else if(userType === "freelancer"){
+                router.push('/profile/client-freelance')
+            } 
+            toast.success("Login Successful");
         } catch(error: any){
             console.log("Login Failed!");
             toast.error(error.message);

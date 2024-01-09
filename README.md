@@ -1,3 +1,37 @@
+# FreelanceNepal - Next.js E-Commerce App
+FreelanceNepal is a modern e-commerce application built with Next.js, designed to provide a platform for freelancers to showcase their skills and services. Clients can explore and hire freelancers for various projects.
+
+## Features
+- Freelancer Profiles: Create and customize profiles to showcase skills, experience, and previous work.
+- Project Listings: Post and browse projects with detailed descriptions, requirements, and budget information.
+- Secure Transactions: Facilitate secure transactions between clients and freelancers.
+- Real-time Communication: Enable real-time messaging for effective communication between clients and freelancers.
+- Search and Filters: Easily find freelancers and projects through search and filter options.
+- Responsive Design: A responsive and user-friendly interface for seamless user experience on various devices.
+
+
+## Installation
+1. Clone the Repository:
+
+```
+git clone https://github.com/bibekgurung9/nextjs14-ecommerce-app
+```
+2. Navigate to the Project Directory:
+
+```
+cd FreelanceMart
+```
+3. Install Dependencies:
+```
+npm install
+```
+4. Start the Development Server:
+```
+npm run dev
+```
+5. Access the Application:
+Open your web browser and go to http://localhost:3000.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
